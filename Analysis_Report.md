@@ -12,32 +12,45 @@ Columns `EIN` and `NAME` are dropped. Columns that have less than 10 unique valu
 ## Method
 
 Attempt 1:
-
-- Input Neurons: 80
+- Cutoff for application types: < 250
+- Input Neurons: 41
 - Hidden Layers: 1
+- Neurons per hidden layer: [80]
 - Activation Functions: ['relu', 'relu', 'sigmoid']
 
-The model started with 80 input neurons with `relu` activation function, a 30 hidden layer neuron also with `relu` activation function, and an output of 1 neuron and a `sigmoid` activation function. These were chosen as our result needs to be a clear successful (1) or unsuccessful (0). By categorizing values between 0 and 1, `relu` and `sigmoid` functions would be the most logical choice. The input number of features is just the number of features in our X train dataset. The hidden layer number of neurons was set to 30, a number less than the number of features.
-
 Attempt 2:
-- Input Neurons:
-- Hidden Layers:
-- Activation Functions:
+- Cutoff for application types: < 1000
+- Input Neurons: 41
+- Hidden Layers: 2
+- Neurons per hidden layer: [80, 40]
+- Activation Functions: ['relu','relu', 'tanh', 'sigmoid']
 
 Attempt 3:
-- Input Neurons:
-- Hidden Layers:
-- Activation Functions:
+- Cutoff for application types: < 250
+- Input Neurons: 41
+- Hidden Layers: 2
+- Neurons per hidden layer: [40, 30]
+- Activation Functions: ['tanh', 'tanh', 'tanh', 'sigmoid']
 
 ## Results
 
 After training with 100 epochs, the model produced a
 
+Attempt 1:
 - Loss: 0.5578
 - Accuracy: 0.7263
 
-## Analysis
+Attempt 2:
+- Loss: 0.5848
+- Accuracy: 0.7312
 
-This is by no means a good model. The results lost over half the data with only 72.63% accuracy. 
+Attempt 3:
+- Loss: 0.5623
+- Accuracy: 0.7289
+
+
+## Analysis and Summary
+
+Changing any of the parameters and hyperparameters has minimal change to the results; any and all results produced has more than half of data loss and less than 75% accuracy. Attempt 2 had a higher accuracy with over 73% but no attempts were able to produce a performance of at least 75%.
 
 
