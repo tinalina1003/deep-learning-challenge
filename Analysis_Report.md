@@ -7,5 +7,37 @@ From Alphabet Soup’s business team, you have received a CSV containing more th
 
 ## Data Preprocessing
 
+Columns `EIN` and `NAME` are dropped. Columns that have less than 10 unique values were dropped. A cutoff value was set to bin together 'rare' categorical variables together into a new value `Other`. The categorical variables were then one hot encoded, merged with the original dataframe, and the categorical columns were then dropped. The data was then split into training and test data for compiling, training, and evaluating.
+
+## Method
+
+Attempt 1:
+
+- Input Neurons: 80
+- Hidden Layers: 1
+- Activation Functions: ['relu', 'relu', 'sigmoid']
+
+The model started with 80 input neurons with `relu` activation function, a 30 hidden layer neuron also with `relu` activation function, and an output of 1 neuron and a `sigmoid` activation function. These were chosen as our result needs to be a clear successful (1) or unsuccessful (0). By categorizing values between 0 and 1, `relu` and `sigmoid` functions would be the most logical choice. The input number of features is just the number of features in our X train dataset. The hidden layer number of neurons was set to 30, a number less than the number of features.
+
+Attempt 2:
+- Input Neurons:
+- Hidden Layers:
+- Activation Functions:
+
+Attempt 3:
+- Input Neurons:
+- Hidden Layers:
+- Activation Functions:
+
+## Results
+
+After training with 100 epochs, the model produced a
+
+- Loss: 0.5578
+- Accuracy: 0.7263
+
+## Analysis
+
+This is by no means a good model. The results lost over half the data with only 72.63% accuracy. 
 
 
